@@ -9,7 +9,7 @@ const Layout = () => {
   return (
     <>
       <div className="content-container">
-        <div className="flex">
+        <div className="flex h-[100vh]">
           {location.pathname !== "/" && <Menu />}
           <div className="mx-auto">
             <Outlet />
