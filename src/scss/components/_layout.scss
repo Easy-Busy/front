@@ -1,0 +1,11 @@
+.content-container {
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.content-container::-webkit-scrollbar {
+  display: none;
+}

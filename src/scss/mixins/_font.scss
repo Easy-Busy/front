@@ -1,0 +1,35 @@
+$font-map: (
+  black: #000000,
+  white: #ffffff,
+  basic: #1b1b1b,
+  color-1: #8c8c8c,
+  color-2: #bababa,
+  color-3: #717171,
+  color-4: #757575,
+  color-5: #3c3c3c,
+  color-6: #cdcdcd,
+  color-7: #939393,
+  color-8: #aaa,
+  color-9: #545454,
+  color-10: #9b9b9b,
+  color-11: #acacac,
+  color-12: #0083ff,
+  color-13: #959595,
+);
+
+@function _get-font-value($key) {
+  @return map-get($font-map, $key);
+}
+
+@mixin custom-font-size($weight: 600, $size: 14px, $font-color: basic) {
+  font-family: Pretendard;
+  font-style: normal;
+  line-height: normal;
+  font-weight: $weight;
+  font-size: $size;
+  color: _get-font-value($font-color);
+}
+
+@mixin custom-font-color($font-color: basic) {
+  color: _get-font-value($font-color);
+}

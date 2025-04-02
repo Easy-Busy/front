@@ -1,0 +1,41 @@
+$back-map: (
+  black: #000000,
+  white: #ffffff,
+  basic: #1b1b1b,
+  bcolor-1: #d5d5d5,
+  bcolor-2: #999,
+  bcolor-3: #efefef,
+  bcolor-4: #393939,
+);
+
+@function _get-backround-value($key) {
+  @return map-get($back-map, $key);
+}
+
+@mixin custom-background-color($back-color: basic) {
+  color: _get-backround-value($back-color);
+}
+@mixin profile-list_name($m) {
+  margin: $m;
+  text-align: center;
+}
+
+@mixin box-radius_with_color($r, $back-color) {
+  flex-shrink: 0;
+  border-radius: $r;
+  background: _get-backround-value($back-color);
+}
+@mixin box-radius($r) {
+  flex-shrink: 0;
+  border-radius: $r;
+}
+
+@mixin search-box($m) {
+  position: relative;
+  display: flex;
+  padding: 0.625rem 0.9375rem;
+  align-items: center;
+  gap: 2.125rem;
+  border: 0.0625rem solid var(--calendar_-date_text, #cdcdcd);
+  margin: $m;
+}
