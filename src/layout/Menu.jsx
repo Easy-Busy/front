@@ -90,7 +90,7 @@ const Menu = () => {
           <div className="w-[160px] h-[40px] pt-[6px] pl-[20px] pr-[20px] flex items-center gap-[20px]">
             <div className="flex items-center gap-[16px] w-[105px] h-[40px]">
               <div className="w-[32px] h-[32px] rounded-[30px] bg-white "></div>
-              <div className="flex text-align-center">user1</div>
+              <div className="flex text-align-center">user2</div>
             </div>
             <div className="px-[7px]">
               <Message />
