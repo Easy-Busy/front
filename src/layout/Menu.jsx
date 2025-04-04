@@ -4,6 +4,7 @@ import { ReactComponent as Plus } from "../assets/menu/plus.svg";
 import { ReactComponent as Feature } from "../assets/menu/Icon/feature.svg";
 import { ReactComponent as Homes } from "../assets/menu/Icon/home.svg";
 import { ReactComponent as Lucide } from "../assets/menu/Icon/lucide.svg";
+import { ReactComponent as Message } from "../assets/menu/Icon/message.svg";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const Menu = () => {
@@ -20,7 +21,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="flex gap-[4px] pr-[30px] h-[100vh]">
+    <div className="flex gap-[4px] pr-[30px] h-[100vh] relative">
       <div className="w-[65px] h-[100vh] bg-[#D8D8D8] flex flex-col pt-[30px] flex items-center">
         <div
           className="w-[35px] h-[35px] rounded-[30px] bg-[#7E7E7E] flex justify-center items-center cursor-pointer hover:bg-[#6E6E6E]"
@@ -82,6 +83,19 @@ const Menu = () => {
               </div>
             </div>
           ))}
+        </div>
+        {/* 프로필 구역 */}
+        <div className="w-[195px] pt-[22px] absolute bottom-[30px]">
+          <div className="w-[100%] h-[0.5px] bg-white"></div>
+          <div className="w-[160px] h-[40px] pt-[6px] pl-[20px] pr-[20px] flex items-center gap-[20px]">
+            <div className="flex items-center gap-[16px] w-[105px] h-[40px]">
+              <div className="w-[32px] h-[32px] rounded-[30px] bg-white "></div>
+              <div className="flex text-align-center">user1</div>
+            </div>
+            <div className="px-[7px]">
+              <Message />
+            </div>
+          </div>
         </div>
       </div>
     </div>
