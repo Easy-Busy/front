@@ -23,8 +23,8 @@ const WorkspaceSidebar = ({ workspaceId }) => {
   };
 
   const workspaceList = [
-    { id: 1, name: "워크스페이스1" },
-    { id: 2, name: "워크스페이스2" }
+    { id: 1, name: "초대하기" },
+    { id: 2, name: "워크스페이스 설정" }
   ];
 
   return (
