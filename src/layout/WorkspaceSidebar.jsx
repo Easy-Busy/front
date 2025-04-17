@@ -5,6 +5,9 @@ import { ReactComponent as CalendarIcon } from "../assets/menu/Icon/calendar.svg
 import { ReactComponent as ChatIcon } from "../assets/menu/Icon/chat.svg";
 import { ReactComponent as ProjectIcon } from "../assets/menu/Icon/management.svg";
 import { ReactComponent as DropdownIcon } from "../assets/menu/Icon/dropdown.svg";
+import { ReactComponent as InviteIcon } from "../assets/menu/Icon/invite.svg";
+import { ReactComponent as SettingIcon } from "../assets/menu/Icon/setting.svg";
+import { ReactComponent as CloseIcon } from "../assets/menu/Icon/close.svg";
 
 const WorkspaceSidebar = ({ workspaceId }) => {
   const navigate = useNavigate();
@@ -22,11 +25,6 @@ const WorkspaceSidebar = ({ workspaceId }) => {
     setIsDropdownOpen((prev) => !prev);
   };
 
-  const workspaceList = [
-    { id: 1, name: "초대하기" },
-    { id: 2, name: "워크스페이스 설정" }
-  ];
-
   return (
     <div className="w-[195px] h-[100vh] bg-[#F0F0F0] relative">
       <div className="relative">
@@ -35,19 +33,28 @@ const WorkspaceSidebar = ({ workspaceId }) => {
           onClick={handleDropdownToggle}
         >
           <span style={{ color: 'color(display-p3 0.6321 0.6321 0.6321)', fontFamily: 'Pretendard', fontSize: '14px', fontStyle: 'normal', fontWeight: 500, lineHeight: 'normal' }}>GDG_project</span>
-          <DropdownIcon className={`w-[24px] h-[24px] transition-transform ${isDropdownOpen ? "rotate-180" : "rotate-0"}`} />
+          {isDropdownOpen ? (
+            <CloseIcon className="w-[24px] h-[24px]" />
+          ) : (
+            <DropdownIcon className="w-[24px] h-[24px]" />
+          )}
         </div>
         {isDropdownOpen && (
-          <div className="absolute left-[20px] top-[60px] w-[155px] bg-white border border-[#D0D0D0] rounded shadow-md z-10">
-            {workspaceList.map((ws) => (
-              <div
-                key={ws.id}
-                onClick={() => navigate(`/dashboard/${ws.id}/calendar`)}
-                className="px-4 py-2 hover:bg-[#F5F5F5] cursor-pointer"
-              >
-                {ws.name}
-              </div>
-            ))}
+          <div className="absolute left-[20px] top-[60px] w-[155px] bg-white border border-[#D0D0D0] rounded shadow-md z-10 py-1">
+            <div
+              onClick={() => alert("초대 하기")}
+              className="flex items-center justify-between px-3 py-2 hover:bg-[#F5F5F5] cursor-pointer"
+            >
+              <span className="text-sm text-[#333]">초대 하기</span>
+              <InviteIcon className="w-[16px] h-[16px]" />
+            </div>
+            <div
+              onClick={() => alert("워크스페이스 설정")}
+              className="flex items-center justify-between px-3 py-2 hover:bg-[#F5F5F5] cursor-pointer"
+            >
+              <span className="text-sm text-[#333]">워크스페이스 설정</span>
+              <SettingIcon className="w-[16px] h-[16px]" />
+            </div>
           </div>
         )}
       </div>
@@ -84,8 +91,9 @@ const WorkspaceSidebar = ({ workspaceId }) => {
           </div>
         ))}
       </div>
-      <div className="text-[#A1A1A1] text-sm mt-4 px-[20px]">
-        프로젝트 참여자 {dummyMembers.length}명
+      <div className="text-[#A1A1A1] text-sm mt-[35px] px-[20px] flex gap-[33px]">
+        <span>프로젝트 참여자</span>
+        <span>{dummyMembers.length}명</span>
       </div>
       <div className="flex flex-col gap-2 mt-2 px-[20px]">
         {dummyMembers.map((name, i) => (

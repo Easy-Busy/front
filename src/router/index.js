@@ -14,6 +14,7 @@ const Project = lazy(() => import("../page/dashboard/Project"));
 
 
 
+
 const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -82,7 +83,6 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-      
     ],
   },
 ]);
