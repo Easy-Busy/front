@@ -7,6 +7,13 @@ const Main = lazy(() => import("../page/main"));
 const Portfolio = lazy(() => import("../page/portfolio"));
 const Management = lazy(() => import("../page/management"));
 const Login = lazy(() => import("../page/login"));
+const Dashboard = lazy(() => import("../page/dashboard/Dashboard"));
+const Calendar = lazy(() => import("../page/dashboard/Calendar"));
+const Chat = lazy(() => import("../page/dashboard/Chat"));
+const Project = lazy(() => import("../page/dashboard/Project"));
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -41,6 +48,38 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Management />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/dashboard/:workspaceId",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Dashboard />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/dashboard/:workspaceId/calendar",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Calendar />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/dashboard/:workspaceId/chat",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Chat />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/dashboard/:workspaceId/project",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Project />
           </Suspense>
         ),
       },
